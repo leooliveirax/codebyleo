@@ -1,14 +1,16 @@
+import { Dock } from "@/components";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./theme-provider";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
@@ -30,13 +32,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="min-h-screen w-full mx-auto max-w-5xl p-6">
-          <main>{children}</main>
-        </div>
+        className={`${geistSans.variable} ${geistMono.variable} ${geistSans.className} bg-background text-foreground antialiased`}>
+        <ThemeProvider enableSystem disableTransitionOnChange attribute="class" defaultTheme="system">
+          <main className="mx-auto min-h-screen w-full max-w-6xl px-6 pb-24">{children}</main>
+
+          <Dock />
+        </ThemeProvider>
       </body>
     </html>
   );
