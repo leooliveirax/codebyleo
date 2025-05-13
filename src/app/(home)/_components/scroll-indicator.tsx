@@ -21,11 +21,11 @@ export function ScrollIndicator({ className }: ScrollIndicatorProps) {
     <AnimatePresence>
       {isAtTop && (
         <motion.div
-          className={cn("text-foreground/50 flex max-w-fit flex-col items-center", className)}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}>
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 10 }}
+          transition={{ duration: 0.6 }}
+          className={cn("text-foreground/50 flex max-w-fit flex-col items-center", className)}>
           <span className="font-mono text-xs">SCROLL</span>
 
           <motion.div

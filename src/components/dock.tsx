@@ -1,9 +1,16 @@
+"use client";
+
 import { NAVIGATION_DATA } from "@/constants/navigation";
+import { motion } from "motion/react";
 import { Divider, DockItem, HoverEffect, ToggleTheme } from ".";
 
 export function Dock() {
   return (
-    <div className="fixed right-0 bottom-6 left-0 mx-auto flex h-14 w-max items-center justify-center border p-1.5 backdrop-blur-md not-only:rounded-2xl supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10">
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.6 }}
+      className="fixed right-0 bottom-6 left-0 mx-auto flex h-14 w-max items-center justify-center border p-1.5 backdrop-blur-md not-only:rounded-2xl supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10">
       <div className="via-foreground absolute -top-px -z-1 h-px w-[90%] bg-linear-to-r from-transparent to-transparent opacity-20" />
 
       {NAVIGATION_DATA.internal.map(({ label, href, icon }, idx) => (
@@ -25,6 +32,6 @@ export function Dock() {
       <HoverEffect>
         <ToggleTheme />
       </HoverEffect>
-    </div>
+    </motion.div>
   );
 }
