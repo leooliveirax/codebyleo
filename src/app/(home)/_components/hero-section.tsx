@@ -8,7 +8,7 @@ export function HeroSection() {
   return (
     <section className="mt-12 flex flex-col justify-center sm:relative sm:mt-0 sm:min-h-screen sm:items-center">
       <h1 className="text-8xl font-medium sm:text-9xl md:text-[164px]">
-        <BlurFade duration={0.6} delay={0.1}>
+        <BlurFade delay={0.1}>
           <span className="flex flex-col sm:hidden">
             <span>HEY</span>
             <span>I AM</span>
@@ -17,7 +17,7 @@ export function HeroSection() {
         </BlurFade>
 
         <span className="hidden flex-col gap-4 sm:flex">
-          <BlurFade direction="up" duration={0.6} delay={0.6}>
+          <BlurFade direction="up" delay={0.4}>
             <span className="flex items-center justify-between gap-4">
               <span>HI</span>
               <span>THERE</span>
@@ -25,20 +25,23 @@ export function HeroSection() {
           </BlurFade>
 
           <span className="flex items-center justify-between px-3">
-            <BlurFade direction="left" className="flex" duration={0.6} delay={0.6}>
+            <BlurFade direction="left" delay={0.4} className="flex">
               <span className="font-mono text-base font-normal">LEO OLIVEIRA</span>
             </BlurFade>
+
             <motion.span
               initial={{ opacity: 0, width: "30%" }}
               animate={{ opacity: 1, width: "40%" }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="w-[30%] border-t md:w-[40%]"></motion.span>
-            <BlurFade direction="right" className="flex" duration={0.6} delay={0.6}>
+              transition={{ duration: 0.4, delay: 0.4 }}
+              className="w-[30%] border-t md:w-[40%]"
+            />
+
+            <BlurFade direction="right" delay={0.4} className="flex">
               <span className="font-mono text-base font-normal">SOFTWARE ENGINEER</span>
             </BlurFade>
           </span>
 
-          <BlurFade direction="down" duration={0.6} delay={0.6}>
+          <BlurFade direction="down" delay={0.4}>
             <span className="flex items-center justify-between gap-4">
               <span>I AM</span>
               <span>LEO</span>
@@ -47,9 +50,7 @@ export function HeroSection() {
         </span>
       </h1>
 
-      <BlurFade className="absolute right-0 bottom-6 hidden sm:flex" duration={0.6} delay={0.6}>
-        <ScrollIndicator />
-      </BlurFade>
+      <ScrollIndicator className="absolute right-0 bottom-6 hidden sm:flex" />
     </section>
   );
 }
