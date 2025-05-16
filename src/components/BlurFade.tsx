@@ -1,12 +1,12 @@
 "use client";
 
 import { AnimatePresence, motion, MotionProps, useInView, UseInViewOptions, Variants } from "motion/react";
-import { useRef } from "react";
+import { ReactNode, useRef } from "react";
 
 type MarginType = UseInViewOptions["margin"];
 
-interface BlurFadeProps extends MotionProps {
-  children: React.ReactNode;
+type BlurFadeProps = MotionProps & {
+  children: ReactNode;
   className?: string;
   variant?: {
     hidden: { y: number };
@@ -19,7 +19,7 @@ interface BlurFadeProps extends MotionProps {
   inView?: boolean;
   inViewMargin?: MarginType;
   blur?: string;
-}
+};
 
 export function BlurFade({
   children,
@@ -36,6 +36,7 @@ export function BlurFade({
 }: BlurFadeProps) {
   const ref = useRef(null);
   const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
+
   const isInView = !inView || inViewResult;
   const defaultVariants: Variants = {
     hidden: {
@@ -51,10 +52,12 @@ export function BlurFade({
     },
   };
   const combinedVariants = variant || defaultVariants;
+
   return (
     <AnimatePresence>
       <motion.div
         ref={ref}
+        className={className}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         exit="hidden"
@@ -64,7 +67,6 @@ export function BlurFade({
           duration,
           ease: "easeOut",
         }}
-        className={className}
         {...props}>
         {children}
       </motion.div>

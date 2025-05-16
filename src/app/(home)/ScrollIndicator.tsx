@@ -1,6 +1,6 @@
 "use client";
 
-import { BlurFade } from "@/components/blur-fade";
+import { BlurFade } from "@/components/BlurFade";
 import { ChevronDown } from "lucide-react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useState } from "react";
@@ -25,7 +25,7 @@ export function ScrollIndicator({ className }: ScrollIndicatorProps) {
             initial={{ opacity: 0, filter: "blur(6px)", y: -6 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             exit={{ opacity: 0, filter: "blur(6px)", y: 6 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             className="text-foreground/50 flex max-w-fit flex-col items-center">
             <span className="font-mono text-xs">SCROLL</span>
 

@@ -1,6 +1,6 @@
-export { Divider } from "./divider";
-export { Dock } from "./dock";
-export { DockItem } from "./dock-item";
-export { HoverEffect } from "./hover-effect";
-export { ToggleTheme } from "./toggle-theme";
-export { Tooltip } from "./tooltip";
+export { Dock } from "./dock/Dock";
+export { DockItem } from "./dock/DockItem";
+export { ToggleThemeButton } from "./dock/ToggleThemeButton";
+export { HoverEffect } from "./HoverEffect";
+export { Divider } from "./ui/divider";
+export { Tooltip } from "./ui/tooltip";

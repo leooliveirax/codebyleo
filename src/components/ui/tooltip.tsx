@@ -1,14 +1,12 @@
 "use client";
 
-import { useState } from "react";
-
-import { motion } from "motion/react";
-
 import { cn } from "@/utils/cn";
+import { motion } from "motion/react";
+import { ComponentProps, useState } from "react";
 
 type TooltipProps = {
   text: string;
-} & React.ComponentProps<"div">;
+} & ComponentProps<"div">;
 
 export function Tooltip({ text, children }: TooltipProps) {
   const [isToastVisible, setIsToastVisible] = useState(false);
@@ -17,8 +15,8 @@ export function Tooltip({ text, children }: TooltipProps) {
     <div
       onMouseEnter={() => setIsToastVisible(true)}
       onMouseLeave={() => setIsToastVisible(false)}
-      aria-label={text}
-      className="relative inline-block">
+      className="relative inline-block"
+      aria-label={text}>
       <motion.div
         className={cn(
           "bg-background absolute -top-4 left-1/2 [translate:-50%_-50%] rounded-md border whitespace-nowrap",
@@ -31,7 +29,7 @@ export function Tooltip({ text, children }: TooltipProps) {
           filter: isToastVisible ? "blur(0px)" : "blur(4px)",
           scale: isToastVisible ? 1 : 0.9,
         }}
-        transition={{ duration: 0.2 }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
         aria-hidden={!isToastVisible}>
         <span>{text}</span>
       </motion.div>

@@ -2,21 +2,27 @@
 
 import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "motion/react";
-import { ComponentProps, PropsWithChildren, useState } from "react";
+import { ComponentProps, ElementType, PropsWithChildren, useState } from "react";
 
 type HoverEffectProps = {
+  as?: ElementType;
   idx?: number;
 } & ComponentProps<"div">;
 
-export function HoverEffect({ idx = 0, children, className }: PropsWithChildren<HoverEffectProps>) {
+export function HoverEffect({
+  as: Component = "div",
+  idx = 0,
+  className,
+  children,
+}: PropsWithChildren<HoverEffectProps>) {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
   return (
-    <div
+    <Component
       key={idx}
       onMouseEnter={() => setHoveredIdx(idx)}
       onMouseLeave={() => setHoveredIdx(null)}
-      className={cn("relative flex", className)}>
+      className={cn("relative", className)}>
       <AnimatePresence>
         {hoveredIdx === idx && (
           <motion.span
@@ -34,7 +40,7 @@ export function HoverEffect({ idx = 0, children, className }: PropsWithChildren<
         )}
       </AnimatePresence>
 
-      <div className="z-[1]">{children}</div>
-    </div>
+      {children}
+    </Component>
   );
 }

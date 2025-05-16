@@ -1,6 +1,8 @@
-import { Dock } from "@/components";
+import { Dock } from "@/components/dock/Dock";
+import { cn } from "@/utils/cn";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ReactNode } from "react";
 import "./globals.css";
 import { ThemeProvider } from "./theme-provider";
 
@@ -29,12 +31,17 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${geistSans.className} bg-background text-foreground antialiased`}>
+        className={cn(
+          "bg-background text-foreground antialiased",
+          geistSans.variable,
+          geistMono.variable,
+          geistSans.className
+        )}>
         <ThemeProvider enableSystem disableTransitionOnChange attribute="class" defaultTheme="system">
           <main className="mx-auto min-h-screen w-full max-w-6xl px-6 pb-24">{children}</main>
 

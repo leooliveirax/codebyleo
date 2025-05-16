@@ -1,8 +1,8 @@
 "use client";
 
-import { BlurFade } from "@/components/blur-fade";
+import { BlurFade } from "@/components/BlurFade";
 import { motion } from "motion/react";
-import { ScrollIndicator } from ".";
+import { ScrollIndicator } from "./ScrollIndicator";
 
 export function HeroSection() {
   return (
@@ -32,7 +32,7 @@ export function HeroSection() {
             <motion.span
               initial={{ opacity: 0, width: "30%" }}
               animate={{ opacity: 1, width: "40%" }}
-              transition={{ duration: 0.4, delay: 0.4 }}
+              transition={{ duration: 0.4, delay: 0.4, ease: "easeOut" }}
               className="w-[30%] border-t md:w-[40%]"
             />
 

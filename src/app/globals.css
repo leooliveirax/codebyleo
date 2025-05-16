@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+/*
+  I prefered to use simple variable names here but it's a good practice follow design system guidelines:
+  - kebab-case
+  - category-based prefixes (e.g. color-background, color-foreground, etc.)
+  - semantic tokens (e.g. color-brand, color-accent, etc.)
+  - numeric scale (e.g. color-primary-500, color-secondary-300, etc.)
+  - modifier-based hierarchy (e.g. color-primary-light, color-secondary-dark, etc.)
+  - component-specific variables (e.g. color-button-primary, color-button-secondary, etc.)
+*/
+
 :root {
   --background: hsl(0 0% 99%);
   --foreground: hsl(0 0% 8.5%);
