@@ -1,12 +1,20 @@
 import { BlurFade } from "@/components/BlurFade";
-import { Construction } from "lucide-react";
+import Link from "next/link";
 
 export default function Writings() {
   return (
-    <section className="flex h-screen justify-center">
-      <BlurFade delay={0.1} className="flex flex-col items-center justify-center gap-4">
-        <Construction className="size-12" />
-        <h1 className="text-center text-2xl font-bold">Writing page is under construction...</h1>
+    <section className="flex h-screen w-full justify-center">
+      <BlurFade delay={0.1} className="flex w-full flex-col items-center justify-center">
+        <Link
+          className="hover:bg-hover z-[1] flex w-full items-center gap-2 rounded-xl px-3 py-4 text-sm"
+          href="/writings/welcome">
+          <span className="font-medium">Welcome</span>
+          <span className="text-foreground/80 hidden sm:block">
+            Hello, and a warm welcome to my corner of the internet!
+          </span>
+          <div className="mx-1 flex-1 border-t"></div>
+          <span className="text-foreground/80">2025</span>
+        </Link>
       </BlurFade>
     </section>
   );
