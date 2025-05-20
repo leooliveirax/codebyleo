@@ -20,9 +20,9 @@ export const NAVIGATION_DATA: NavigationData = {
       href: "/",
     },
     {
-      label: "Writing",
+      label: "Writings",
       icon: Pencil,
-      href: "/writing",
+      href: "/writings",
     },
     {
       label: "Crafts",
