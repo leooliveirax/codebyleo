@@ -6,7 +6,7 @@ import { ScrollIndicator } from "./ScrollIndicator";
 
 export function HeroSection() {
   return (
-    <section className="mt-12 flex flex-col justify-center sm:relative sm:mt-0 sm:min-h-screen sm:items-center">
+    <section className="flex flex-col justify-center sm:relative sm:mt-0 sm:min-h-screen sm:items-center">
       <h1 className="text-8xl font-medium sm:text-9xl md:text-[164px]">
         <BlurFade delay={0.1}>
           <span className="flex flex-col sm:hidden">
@@ -50,7 +50,7 @@ export function HeroSection() {
         </span>
       </h1>
 
-      <ScrollIndicator className="absolute right-0 bottom-6 hidden sm:flex" />
+      <ScrollIndicator className="absolute right-0 bottom-7 hidden sm:flex" />
     </section>
   );
 }

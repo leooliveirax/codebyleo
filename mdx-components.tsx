@@ -11,18 +11,18 @@ type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
 
 const components = {
   h1: (props: HeadingProps) => <h1 className="mb-0 pt-12 font-medium" {...props} />,
-  h2: (props: HeadingProps) => <h2 className="text-foreground/80 mt-8 mb-3 font-medium" {...props} />,
-  h3: (props: HeadingProps) => <h3 className="text-foreground/80 mt-8 mb-3 font-medium" {...props} />,
+  h2: (props: HeadingProps) => <h2 className="text-foreground mt-8 mb-3 font-medium" {...props} />,
+  h3: (props: HeadingProps) => <h3 className="text-foreground mt-8 mb-3 font-medium" {...props} />,
   h4: (props: HeadingProps) => <h4 className="font-medium" {...props} />,
-  p: (props: ParagraphProps) => <p className="text-foreground/80 leading-snug" {...props} />,
-  ol: (props: ListProps) => <ol className="text-foreground/80 list-decimal space-y-2 pl-5" {...props} />,
-  ul: (props: ListProps) => <ul className="text-foreground/80 list-disc space-y-1 pl-5" {...props} />,
+  p: (props: ParagraphProps) => <p className="text-foreground text-base leading-7" {...props} />,
+  ol: (props: ListProps) => <ol className="text-foreground list-decimal space-y-2 pl-5" {...props} />,
+  ul: (props: ListProps) => <ul className="text-foreground list-disc space-y-1 pl-5" {...props} />,
   li: (props: ListItemProps) => <li className="pl-1" {...props} />,
   em: (props: ComponentPropsWithoutRef<"em">) => <em className="font-medium" {...props} />,
   strong: (props: ComponentPropsWithoutRef<"strong">) => <strong className="font-medium" {...props} />,
   a: ({ href, children, ...props }: AnchorProps) => {
     const className =
-      "text-foreground/80 hover:text-foreground/70 underline underline-offset-2 decoration-foreground/70";
+      "text-foreground hover:text-foreground/70 underline underline-offset-2 decoration-foreground/70";
     if (href?.startsWith("/")) {
       return (
         <Link href={href} className={className} {...props}>
@@ -68,7 +68,7 @@ const components = {
     </table>
   ),
   blockquote: (props: BlockquoteProps) => (
-    <blockquote className="text-foreground/80 ml-[0.075em] border-l-3 pl-4 font-medium" {...props} />
+    <blockquote className="text-foreground ml-[0.075em] border-l-3 pl-4 font-medium" {...props} />
   ),
 };
 

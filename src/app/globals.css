@@ -11,7 +11,7 @@
 */
 
 :root {
-  --background: hsl(0 0% 99%);
+  --background: hsl(0 0% 93%);
   --foreground: hsl(0 0% 8.5%);
   --border: hsl(0 0% 0% / 0.071);
   --hover: hsl(0, 0%, 91%);
@@ -19,7 +19,7 @@
 
 .dark {
   --background: hsl(0 0% 8.5%);
-  --foreground: hsl(0 0% 99%);
+  --foreground: hsl(0 0% 93%);
   --border: hsl(0 0% 100% / 0.077);
   --hover: hsl(0, 0%, 13.6%);
 }

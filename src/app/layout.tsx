@@ -43,7 +43,7 @@ export default function RootLayout({
           geistSans.className
         )}>
         <ThemeProvider enableSystem disableTransitionOnChange attribute="class" defaultTheme="system">
-          <main className="mx-auto min-h-screen w-full max-w-6xl px-6 pb-24">{children}</main>
+          <main className="mx-auto min-h-screen w-full max-w-6xl p-6 pb-24 sm:pt-0">{children}</main>
 
           <Dock />
         </ThemeProvider>
