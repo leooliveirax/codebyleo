@@ -48,11 +48,11 @@ A modern website built with Next.js 15, React 19, and TypeScript, featuring MDX 
 
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Build for production
+### Build for production:
 
-    ```bash
-    pnpm build
-    ```
+   ```bash
+   pnpm build
+   ```
 
 ## 📝 Available Scripts
 
