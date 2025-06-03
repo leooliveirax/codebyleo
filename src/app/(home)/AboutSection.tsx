@@ -4,7 +4,7 @@ export function AboutSection() {
   return (
     <section className="md:max-w-[60%]">
       <BlurFade delay={0.2} inView>
-        <p className="text-foreground/50 text-xl/snug sm:text-4xl/snug">
+        <p className="text-foreground/50 text-xl sm:text-4xl">
           <span>A </span>
           <span className="text-foreground">Software Engineer </span>
           <span>crafting </span>

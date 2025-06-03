@@ -9,7 +9,7 @@ export function HeroSection() {
     <section className="flex flex-col justify-center sm:relative sm:mt-0 sm:min-h-screen sm:items-center">
       <h1 className="text-8xl font-medium sm:text-9xl md:text-[164px]">
         <BlurFade delay={0.1}>
-          <span className="flex flex-col pt-6 sm:hidden">
+          <span className="flex flex-col pt-12 sm:hidden">
             <span>HEY</span>
             <span>I AM</span>
             <span>LEO</span>
